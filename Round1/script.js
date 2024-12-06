@@ -86,6 +86,12 @@ submitButton.addEventListener('click', () => {
     }
 });
 
+// Disable copying and text selection
+document.addEventListener('copy', (event) => {
+    event.preventDefault();
+    alert("Copying is not allowed on this page.");
+});
+
 // Clear error message on option selection
 questionContainer.addEventListener('change', () => {
     messageContainer.textContent = "";
