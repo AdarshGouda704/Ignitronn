@@ -59,6 +59,34 @@ function toggleDarkMode() {
   }
 }
 
+// Disable Copy-Paste in Question and Answer
+const questionElement = document.getElementById("question");
+const answerBox = document.getElementById("answer-box");
+
+// Disable copy action in question element
+questionElement.addEventListener("copy", (event) => {
+    event.preventDefault();  // Prevent the default copy action
+    alert("Copying is disabled for the question!");  // Show a message
+});
+
+// Disable paste action in question element
+questionElement.addEventListener("paste", (event) => {
+    event.preventDefault();  // Prevent the default paste action
+    alert("Pasting is disabled for the question!");  // Show a message
+});
+
+// Disable copy action in answer input box
+answerBox.addEventListener("copy", (event) => {
+    event.preventDefault();  // Prevent the default copy action
+    alert("Copying is disabled in the editor!");  // Show a message
+});
+
+// Disable paste action in answer input box
+answerBox.addEventListener("paste", (event) => {
+    event.preventDefault();  // Prevent the default paste action
+    alert("Pasting is disabled in the editor!");  // Show a message
+});
+
 // Initialize the page with a random question
 document.addEventListener("DOMContentLoaded", () => {
   loadRandomQuestion();
